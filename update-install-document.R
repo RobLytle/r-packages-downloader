@@ -7,9 +7,9 @@ library(tidyverse)
 update.packages(ask = FALSE, checkBuilt = TRUE)
 
 # ---------------------------------
-# install packages missing packages
+# install missing packages
 # ---------------------------------
-pkgs_df <- read_csv("https://raw.githubusercontent.com/pos5737/r-packages/master/pkgs.csv?token=AB4OvpgLeVPeDy9tX_6RtZ40c6dWNc1Vks5bgCu3wA%3D%3D") %>%
+pkgs_df <- read_csv("https://raw.githubusercontent.com/RobLytle/r-packages-downloader/master/pkgs.csv") %>%
 	glimpse()
 packages <- pkgs_df$package
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
